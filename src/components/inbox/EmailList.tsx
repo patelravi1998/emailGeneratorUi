@@ -18,6 +18,7 @@ interface Email {
   body?: string;
   seen: boolean;
   date: string;
+  sender_name:string
 }
 
 export const EmailList = () => {
@@ -135,7 +136,7 @@ export const EmailList = () => {
               onClick={() => onViewEmail(email)}
             >
               <TableCell className="font-medium">
-                {email.from?.name || email.from?.address || "Unknown Sender"}
+                {email.sender_name || email.sender_name || "Unknown Sender"}
               </TableCell>
               <TableCell>{email.subject || "No Subject"}</TableCell>
               <TableCell className="text-right text-gray-500">
@@ -182,7 +183,7 @@ export const EmailList = () => {
 
             <h2 className="text-lg font-semibold mb-2">{selectedEmail.subject || "No Subject"}</h2>
             <p className="text-sm text-gray-500 mb-4">
-              From: {selectedEmail.from?.name || selectedEmail.from?.address || "Unknown Sender"}
+              From: {selectedEmail.sender_name || selectedEmail.sender_name || "Unknown Sender"}
             </p>
 
             <div className="border-t pt-4">

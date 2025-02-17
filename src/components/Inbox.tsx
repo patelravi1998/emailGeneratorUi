@@ -43,8 +43,9 @@ export const Inbox: React.FC<InboxProps> = ({ currentEmail }) => {
   }, [currentEmail]);
 
   const refreshInbox = async () => {
-    if (!currentEmail || loading) return;
+    console.log(`>>>>>hastag`)
 
+    if (!currentEmail || loading) return;
     setLoading(true);
     setIsRefreshing(true);
     try {

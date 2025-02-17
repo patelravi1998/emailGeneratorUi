@@ -36,6 +36,13 @@ export const InboxHeader = ({
     }
   };
 
+  const refreshInboxMail = async () => {
+    console.log(`>>>>jajajaj`)
+    setTimeout(() => {
+      window.location.reload(); // Reload the page after successful deletion
+    }, 1000); 
+  };
+
   return (
     <div className="p-6 bg-gradient-to-r from-primary/5 via-purple-500/5 to-primary/5 border-b">
       <div className="flex items-center justify-between mb-4">
@@ -44,7 +51,7 @@ export const InboxHeader = ({
         </h2>
         <div className="flex gap-2">
           <button
-            onClick={refreshInbox}
+            onClick={refreshInboxMail}
             disabled={loading}
             className={cn(
               "p-2 text-gray-600 hover:text-primary transition-all duration-300 rounded-full hover:bg-white/80 transform hover:scale-110",

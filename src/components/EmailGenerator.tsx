@@ -63,6 +63,7 @@ export const EmailGenerator = ({ onEmailGenerated, currentEmail }: EmailGenerato
         localStorage.setItem('temporaryEmail', data.data);
         onEmailGenerated(data.data);
         toast.success(`New email generated: ${data.data}`);
+        window.location.reload();
       } else {
         toast.error("Failed to generate email");
       }
@@ -95,6 +96,7 @@ export const EmailGenerator = ({ onEmailGenerated, currentEmail }: EmailGenerato
     localStorage.removeItem('temporaryEmail');
     onEmailGenerated('');
     toast.success("Email address deleted!");
+    window.location.reload();
   };
 
   return (

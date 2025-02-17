@@ -32,13 +32,13 @@ export const EmailList = () => {
       setError(null);
       const storedIp = localStorage.getItem("userIp");
       if (!storedIp) {
-        setError("No IP address found in local storage.");
+        // setError("No IP address found in local storage.");
         setLoading(false);
         return;
       }
       const temporaryEmail = localStorage.getItem("temporaryEmail");
       if (!storedIp) {
-        setError("No temporaryEmail  found in local storage.");
+        // setError("No temporaryEmail  found in local storage.");
         setLoading(false);
         return;
       }
